@@ -64,7 +64,7 @@ export const t = () => (
   </>
 );
 
-const aggRackDevices = [
+const arDevices = [
   { name: "TOR17", manufacturer: "Arista", model: 7080, portCount: 32 },
   { name: "TOR18", manufacturer: "Arista", model: 7060, portCount: 32 },
   { name: "MGMT1", manufacturer: "Arista", model: 7080, portCount: 32 },
@@ -72,7 +72,7 @@ const aggRackDevices = [
   { name: "NPB1", manufacturer: "Arista", model: 7080, portCount: 24 },
   { name: "NPB2", manufacturer: "Arista", model: 7080, portCount: 24 },
 ];
-const compRackDevices = [
+const crDevices = [
   { name: "TOR1", manufacturer: "Arista", model: 7080, portCount: 32 },
   { name: "TOR2", manufacturer: "Arista", model: 7060, portCount: 32 },
   { name: "MGMT1", manufacturer: "Arista", model: 7080, portCount: 24 },
@@ -82,98 +82,103 @@ const connections = [
   // CE1 Connections
   {
     from: "ce1",
-    to: "aggrack",
+    to: "ar",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
   {
     from: "ce1",
-    to: "comprack1",
+    to: "cr1",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
   {
     from: "ce1",
-    to: "comprack2",
+    to: "cr2",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
   {
     from: "ce1",
-    to: "comprack3",
+    to: "cr3",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
   // CE2 Connections
   {
     from: "ce2",
-    to: "aggrack",
+    to: "ar",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
   {
     from: "ce2",
-    to: "comprack1",
+    to: "cr1",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
   {
     from: "ce2",
-    to: "comprack2",
+    to: "cr2",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
   {
     from: "ce2",
-    to: "comprack3",
+    to: "cr3",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
   //  Rack Connections
   {
-    from: "aggrack",
-    to: "comprack1",
+    from: "ar",
+    to: "cr1",
     startDir: DIRECTION.RIGHT,
     endDir: DIRECTION.LEFT,
   },
   {
-    from: "comprack1",
-    to: "comprack2",
+    from: "cr1",
+    to: "cr2",
     startDir: DIRECTION.RIGHT,
     endDir: DIRECTION.LEFT,
   },
   {
-    from: "comprack2",
-    to: "comprack3",
+    from: "cr2",
+    to: "cr3",
     startDir: DIRECTION.RIGHT,
     endDir: DIRECTION.LEFT,
   },
   {
-    from: "comprack3",
-    to: "comprack4",
+    from: "cr3",
+    to: "cr4",
     startDir: DIRECTION.RIGHT,
     endDir: DIRECTION.LEFT,
   },
 ];
 
 const racks = [
-  { id: "aggrack", name: "Agg Rack", devices: aggRackDevices, left: "20px" },
   {
-    id: "comprack1",
+    id: "ar",
+    name: "Agg Rack",
+    devices: arDevices,
+    left: "20px",
+  },
+  {
+    id: "cr1",
     name: "Comp Rack 1",
-    devices: compRackDevices,
+    devices: crDevices,
     left: "220px",
   },
   {
-    id: "comprack2",
+    id: "cr2",
     name: "Comp Rack 2",
-    devices: compRackDevices,
+    devices: crDevices,
     left: "420px",
   },
   {
-    id: "comprack3",
+    id: "cr3",
     name: "Comp Rack 3",
-    devices: compRackDevices,
+    devices: crDevices,
     left: "640px",
   },
 ];
@@ -218,37 +223,6 @@ export const Home = () => (
         }}
       />
     ))}
-
-    {/* <Rack
-      id="rack1"
-      name="Agg Rack"
-      devices={aggRackDevices}
-      style={{
-        left: "30px",
-        top: "200px",
-        position: "absolute",
-      }}
-    />
-    <Rack
-      id="rack2"
-      name="Comp Rack 1"
-      devices={compRackDevices}
-      style={{
-        left: "220px",
-        top: "200px",
-        position: "absolute",
-      }}
-    />
-    <Rack
-      id="rack3"
-      name="Comp Rack 2"
-      devices={compRackDevices}
-      style={{
-        left: "420px",
-        top: "200px",
-        position: "absolute",
-      }}
-    /> */}
 
     {connections.map((connection, i) => (
       <Arrow
