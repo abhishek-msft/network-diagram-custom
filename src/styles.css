@@ -1,0 +1,39 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.arrow {
+  pointer-events: none;
+}
+
+.arrow__path {
+  stroke: #000;
+  fill: transparent;
+  stroke-dasharray: 4 2;
+}
+
+.arrow__head {
+  stroke-width: 1px;
+}
+
+#from,
+#to {
+  height: 100px;
+  width: 68px;
+}
+
+#from {
+  top: 20px;
+}
+
+#to {
+  top: 20px;
+}
+
+.rack {
+  border: 1px solid gray;
+  background: lightgray;
+  padding: 5px;
+  height: 100px;
+  width: 40px;
+}
