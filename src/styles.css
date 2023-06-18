@@ -6,12 +6,20 @@ body {
   pointer-events: none;
 }
 
+svg:hover {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px gray;
+}
 .arrow__path {
   stroke: #000;
   fill: transparent;
   stroke-dasharray: 4 2;
 }
-
+.arrow__path:active {
+  stroke: blue;
+}
 .arrow__head {
   stroke-width: 1px;
 }
