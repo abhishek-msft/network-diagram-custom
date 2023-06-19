@@ -89,45 +89,8 @@ const connections = [
     endDir: DIRECTION.TOP,
   },
   {
-    from: "pe1",
-    to: "cr1",
-    startDir: DIRECTION.BOTTOM,
-    endDir: DIRECTION.TOP,
-  },
-  {
-    from: "pe1",
-    to: "cr2",
-    startDir: DIRECTION.BOTTOM,
-    endDir: DIRECTION.TOP,
-  },
-  {
-    from: "pe1",
-    to: "cr3",
-    startDir: DIRECTION.BOTTOM,
-    endDir: DIRECTION.TOP,
-  },
-  // pe2 Connections
-  {
     from: "pe2",
     to: "ar",
-    startDir: DIRECTION.BOTTOM,
-    endDir: DIRECTION.TOP,
-  },
-  {
-    from: "pe2",
-    to: "cr1",
-    startDir: DIRECTION.BOTTOM,
-    endDir: DIRECTION.TOP,
-  },
-  {
-    from: "pe2",
-    to: "cr2",
-    startDir: DIRECTION.BOTTOM,
-    endDir: DIRECTION.TOP,
-  },
-  {
-    from: "pe2",
-    to: "cr3",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
