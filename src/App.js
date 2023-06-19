@@ -65,6 +65,8 @@ export const t = () => (
 );
 
 const arDevices = [
+  { name: "CE1", manufacturer: "Arista", model: 7060, portCount: 24 },
+  { name: "CE2", manufacturer: "Arista", model: 7060, portCount: 24 },
   { name: "TOR17", manufacturer: "Arista", model: 7080, portCount: 32 },
   { name: "TOR18", manufacturer: "Arista", model: 7060, portCount: 32 },
   { name: "MGMT1", manufacturer: "Arista", model: 7080, portCount: 32 },
@@ -79,52 +81,52 @@ const crDevices = [
 ];
 
 const connections = [
-  // CE1 Connections
+  // pe1 Connections
   {
-    from: "ce1",
+    from: "pe1",
     to: "ar",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
   {
-    from: "ce1",
+    from: "pe1",
     to: "cr1",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
   {
-    from: "ce1",
+    from: "pe1",
     to: "cr2",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
   {
-    from: "ce1",
+    from: "pe1",
     to: "cr3",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
-  // CE2 Connections
+  // pe2 Connections
   {
-    from: "ce2",
+    from: "pe2",
     to: "ar",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
   {
-    from: "ce2",
+    from: "pe2",
     to: "cr1",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
   {
-    from: "ce2",
+    from: "pe2",
     to: "cr2",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
   },
   {
-    from: "ce2",
+    from: "pe2",
     to: "cr3",
     startDir: DIRECTION.BOTTOM,
     endDir: DIRECTION.TOP,
@@ -186,8 +188,8 @@ const racks = [
 export const Home = () => (
   <>
     <CeDevice
-      id="ce1"
-      name="CE1"
+      id="pe1"
+      name="PE1"
       style={{
         left: "120px",
         top: "10px",
@@ -199,8 +201,8 @@ export const Home = () => (
     />
 
     <CeDevice
-      id="ce2"
-      name="CE2"
+      id="pe2"
+      name="PE1"
       style={{
         left: "320px",
         top: "10px",
@@ -210,7 +212,17 @@ export const Home = () => (
         marginTop: "5px",
       }}
     />
-
+    <hr
+      stroke="dotted"
+      style={{
+        border: "none",
+        borderTop: "1px dotted gray",
+        position: "absolute",
+        top: "150px",
+        left: 0,
+        width: "100%",
+      }}
+    />
     {racks.map((rack, i) => (
       <Rack
         id={rack.id}
